@@ -1,26 +1,92 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, use } from "react"
 
 export default function Formulario() {
     const [userName, setUserName] = useState<string>("")
+    const [nameError, setNameError] = useState<boolean>(false)
     const [email, setEmail] = useState<string>("")
+    const [cpf, setCpf] = useState<string>("")
+    const [cnpj, setCnpj] = useState<string>("")
+    const [password, setPassword] = useState<string>("")
+    const [confirmPassword, setConfirmPassword] = useState<string>("")
     const [personType, setPersonType] = useState<string>("")
+    const [cpfError, setCpfError] = useState<boolean>(false)
+    const [cnpjError, setCnpjError] = useState<boolean>(false)
+    const [differentPasswords, setDifferentPasswords] = useState<boolean>(false)
+    const [submitState, setSubmitState] = useState<boolean>(true)
+
+    
+    
+    useEffect(()=>{
+        if(password !== confirmPassword){
+            setDifferentPasswords(true)
+        }else{
+            setDifferentPasswords(false)
+        }
+    },[password,confirmPassword])
+
+    useEffect(()=>{
+        if(!(cpf.length === 11) ){
+            setCpfError(true)
+        }else{
+            setCpfError(false)
+        }
+
+        if(!(cnpj.length === 14) ){
+            setCnpjError(true)
+        }else{
+            setCnpjError(false)
+        }
+    },[cpf,cnpj])
+
+    useEffect(()=>{
+        // Validação do length do username em pelo menos 3 dígitos
+        if(userName.length < 3){
+            setNameError(true)
+        }else{
+            setNameError(false)
+        }
+        // Validação
+
+
+        // Validação do preenchimento dos campos
+        if(userName !== "" && email !== "" && password !== "" && confirmPassword !== ""){
+            setSubmitState(false)
+        }else{
+            setSubmitState(true)
+        }
+
+
+
+    },[userName,email,password,confirmPassword])
+
+    function submitForm(e:React.SubmitEvent<HTMLFormElement>){
+        e.preventDefault()
+        setUserName('')
+        setEmail('')
+        setPersonType("")
+        setCnpj('')
+        setCpf('')
+        setPassword('')
+        setConfirmPassword('')
+    }
 
     return (
-        <div>
+        <form onSubmit={submitForm}>
             <h2>Dados Pessoais</h2>
 
             <div className="input-text">
-                <label htmlFor="username">Nome Completo:</label>
-                <input type="text" id="username" />
+                <label htmlFor="username">Nome Completo*:</label>
+                <input type="text" id="username" value={userName} required onChange={(e)=> {setUserName(e.target.value)}}/>
+                {nameError && <p style={{color:"red", fontSize:"8px"}}>O Nome deve conter pelo menos 3 caracteres.</p>}
             </div>
             <div className="input-email">
-                <label htmlFor="username">E-mail:</label>
-                <input type="text" id="username" />
+                <label htmlFor="email">E-mail*:</label>
+                <input type="text" id="email" value={email} required onChange={(e)=> {setEmail(e.target.value)}}/>
             </div>
             <div className="input-type">
-                <p>Tipo:</p>
+                <p>Tipo*:</p>
                 <label>
                     <input type="radio" name="type" value="typePF" onChange={(e) => {
                         setPersonType(e.target?.value)
@@ -34,17 +100,30 @@ export default function Formulario() {
             </div>
             {personType === "typePF" &&
                 <div className="input-text">
-                    <label htmlFor="cpf">CPF:</label>
-                    <input type="text" id="cpf" placeholder="000.000.000-00" />
+                    <label htmlFor="cpf">CPF*:</label>
+                    <input type="text" id="cpf" placeholder="000.000.000-00" value={cpf} onChange={(e)=> setCpf(e.target.value)}/>
+                    {cpfError && <p style={{color:"red", fontSize:"8px"}}>O CPF deve conter 11 dígitos.</p>}
                 </div>
             }
             {personType === "typePJ" &&
                 <div className="input-text">
-                    <label htmlFor="cpf">CNPJ:</label>
-                    <input type="text" id="cpf" placeholder="00.000.000/0000-00" />
+                    <label htmlFor="cpf">CNPJ*:</label>
+                    <input type="text" id="cpf" placeholder="00.000.000/0000-00" value={cnpj} onChange={(e)=> setCnpj(e.target.value)}/>
+                    {cnpjError && <p style={{color:"red", fontSize:"8px"}}>O CNPJ deve conter 14 dígitos.</p>}
                 </div>
             }
 
-        </div>
+            <div className="input-password">
+                <label htmlFor="pass">Senha*:</label>
+                <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} required/>
+                <label htmlFor="confirmPass">Repita a senha*:</label>
+                <input type="password" value={confirmPassword} onChange={(e)=>{setConfirmPassword(e.target.value)}} required/>
+            </div>
+            {differentPasswords && <p style={{color:"red", fontSize:"8px"}}>Senhas diferentes, por favor realize a correção.</p>}
+
+            <div className="button-submit">
+                <button type="submit" disabled={submitState}>Enviar Formulário</button>
+            </div>
+        </form>
     )
 }
