@@ -6,7 +6,7 @@ export default function Formulario() {
     const [userName, setUserName] = useState<string>("")
     const [nameError, setNameError] = useState<boolean>(false)
     const [email, setEmail] = useState<string>("")
-    const [emailError, setEmailError] = useState<boolean>("")
+    const [emailError, setEmailError] = useState<boolean>(false)
     const [cpf, setCpf] = useState<string>("")
     const [cnpj, setCnpj] = useState<string>("")
     const [password, setPassword] = useState<string>("")
@@ -15,7 +15,10 @@ export default function Formulario() {
     const [cpfError, setCpfError] = useState<boolean>(false)
     const [cnpjError, setCnpjError] = useState<boolean>(false)
     const [differentPasswords, setDifferentPasswords] = useState<boolean>(false)
+    const [lengthErrorPasswords, setlengthErrorPasswords] = useState<boolean>(false)
+    const [structurePasswords, setStructurePasswords] = useState<boolean>(false)
     const [submitState, setSubmitState] = useState<boolean>(true)
+    const [submitMessage, setSubmitMessage] = useState<boolean>(false)
 
 
 
@@ -30,9 +33,8 @@ export default function Formulario() {
             setNameError(false)
         }
         // Validação do E-mail
-        console.log(email)
-        console.log(email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/))
-        if(email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)){
+        console.log(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
             setEmailError(false)
         }else{
             setEmailError(true)
@@ -60,6 +62,20 @@ export default function Formulario() {
             setDifferentPasswords(false)
         }
 
+        if(password.length < 8){
+            setlengthErrorPasswords(true)
+        }else{
+            setlengthErrorPasswords(false)
+        }
+
+        if(/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
+            setStructurePasswords(true)
+        }else{
+            setStructurePasswords(false)
+        }
+
+            
+
         // Validação do preenchimento dos campos
         if (userName !== "" && email !== "" && password !== "" && confirmPassword !== "") {
             setSubmitState(false)
@@ -75,7 +91,7 @@ export default function Formulario() {
         e.preventDefault()
         setUserName('')
         setEmail('')
-        setPersonType("")
+        setPersonType('')
         setCnpj('')
         setCpf('')
         setPassword('')
@@ -93,7 +109,7 @@ export default function Formulario() {
             </div>
             <div className="input-email">
                 <label htmlFor="email">E-mail*:</label>
-                <input type="text" id="email" value={email} required onChange={(e) => { setEmail(e.target.value) }} />
+                <input type="text" id="email" value={email} required onChange={(e) => { setEmail(e.target.value) }}/>
                  {emailError && <p style={{ color: "red", fontSize: "8px" }}>Não foi possível validar o e-mail.</p>}
             </div>
             <div className="input-type">
@@ -131,9 +147,12 @@ export default function Formulario() {
                 <input type="password" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} required />
             </div>
             {differentPasswords && <p style={{ color: "red", fontSize: "8px" }}>Senhas diferentes, por favor realize a correção.</p>}
+            {lengthErrorPasswords && <p style={{ color: "red", fontSize: "8px" }}>Senha deve conter no mínimo 8 caracteres.</p>}
+            {structurePasswords && <p style={{ color: "red", fontSize: "8px" }}>Senhas deve conter pelo menos 1 letra maiúscula, 1 número e 1 caractere especial.</p>}
 
             <div className="button-submit">
                 <button type="submit" disabled={submitState}>Enviar Formulário</button>
+                {submitMessage && <p style={{color:'green',fontSize:'8px'}}>Formulário Enviado!</p>}
             </div>
         </form>
     )
