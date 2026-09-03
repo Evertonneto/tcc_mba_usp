@@ -1,0 +1,44 @@
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: oklch(70.4% 0.04 256.788);
+    width: 30rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.inputType{
+    display: flex;
+}
+
+.inputPassword{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-family: Helvetica, sans-serif;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.input{
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.2rem 0.4rem;
+}
+
+.input:focus{
+    border: 1px #000 solid;
+}
+
+.submitButton{
+    padding: 0.5rem;
+    border-radius: 0.5rem ;
+    text-decoration: none;
+    border: none;
+}

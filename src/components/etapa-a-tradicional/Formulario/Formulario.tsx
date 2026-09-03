@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, use } from "react"
+import styles from './Formulario.module.css'
 
 export default function Formulario() {
     const [userName, setUserName] = useState<string>("")
@@ -42,13 +43,13 @@ export default function Formulario() {
 
 
         // Validação do cnpj ou cpf
-         if (!(cpf.length === 11)) {
+         if (cpf.length !== 11) {
             setCpfError(true)
         } else {
             setCpfError(false)
         }
 
-        if (!(cnpj.length === 14)) {
+        if (cnpj.length !== 14) {
             setCnpjError(true)
         } else {
             setCnpjError(false)
@@ -67,8 +68,18 @@ export default function Formulario() {
         }else{
             setlengthErrorPasswords(false)
         }
+        if(confirmPassword.length < 8){
+            setlengthErrorPasswords(true)
+        }else{
+            setlengthErrorPasswords(false)
+        }
 
         if(/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
+            setStructurePasswords(true)
+        }else{
+            setStructurePasswords(false)
+        }
+        if(/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(confirmPassword)){
             setStructurePasswords(true)
         }else{
             setStructurePasswords(false)
@@ -99,21 +110,21 @@ export default function Formulario() {
     }
 
     return (
-        <form onSubmit={submitForm}>
-            <h2>Dados Pessoais</h2>
+        <form className={styles.form} onSubmit={submitForm}>
+            <h2 className={styles.title}>Dados Pessoais</h2>
 
             <div className="input-text">
-                <label htmlFor="username">Nome Completo*:</label>
-                <input type="text" id="username" value={userName} required onChange={(e) => { setUserName(e.target.value) }} />
-                {nameError && <p style={{ color: "red", fontSize: "8px" }}>O Nome deve conter pelo menos 3 caracteres.</p>}
+                <label htmlFor="username">Nome Completo*</label>
+                <input type="text" className={styles.input} id="username" value={userName} required onChange={(e) => { setUserName(e.target.value) }} />
+                {nameError && <p style={{ color: "red", fontSize: "12px" }}>O Nome deve conter pelo menos 3 caracteres.</p>}
             </div>
             <div className="input-email">
-                <label htmlFor="email">E-mail*:</label>
-                <input type="text" id="email" value={email} required onChange={(e) => { setEmail(e.target.value) }}/>
-                 {emailError && <p style={{ color: "red", fontSize: "8px" }}>Não foi possível validar o e-mail.</p>}
+                <label htmlFor="email">E-mail*</label>
+                <input type="text" className={styles.input} id="email" value={email} required onChange={(e) => { setEmail(e.target.value) }}/>
+                 {emailError && <p style={{ color: "red", fontSize: "12px" }}>Não foi possível validar o e-mail.</p>}
             </div>
-            <div className="input-type">
-                <p>Tipo*:</p>
+            <div className={styles.inputType}>
+                <p>Tipo*</p>
                 <label>
                     <input type="radio" name="type" value="typePF" onChange={(e) => {
                         setPersonType(e.target?.value)
@@ -128,30 +139,30 @@ export default function Formulario() {
             {personType === "typePF" &&
                 <div className="input-text">
                     <label htmlFor="cpf">CPF*:</label>
-                    <input type="text" id="cpf" placeholder="000.000.000-00" value={cpf} onChange={(e) => setCpf(e.target.value)} />
-                    {cpfError && <p style={{ color: "red", fontSize: "8px" }}>O CPF deve conter 11 dígitos.</p>}
+                    <input type="text" className={styles.input} id="cpf" placeholder="000.000.000-00" value={cpf} onChange={(e) => setCpf(e.target.value)} />
+                    {cpfError && <p style={{ color: "red", fontSize: "12px" }}>O CPF deve conter 11 dígitos.</p>}
                 </div>
             }
             {personType === "typePJ" &&
                 <div className="input-text">
                     <label htmlFor="cpf">CNPJ*:</label>
-                    <input type="text" id="cpf" placeholder="00.000.000/0000-00" value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
-                    {cnpjError && <p style={{ color: "red", fontSize: "8px" }}>O CNPJ deve conter 14 dígitos.</p>}
+                    <input type="text" className={styles.input} id="cpf" placeholder="00.000.000/0000-00" value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
+                    {cnpjError && <p style={{ color: "red", fontSize: "12px" }}>O CNPJ deve conter 14 dígitos.</p>}
                 </div>
             }
 
-            <div className="input-password">
+            <div className={styles.inputPassword}>
                 <label htmlFor="pass">Senha*:</label>
-                <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} required />
+                <input type="password" className={styles.input} value={password} onChange={(e) => { setPassword(e.target.value) }} required />
                 <label htmlFor="confirmPass">Repita a senha*:</label>
-                <input type="password" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} required />
+                <input type="password" className={styles.input} value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} required />
+                {differentPasswords && <p style={{ color: "red", fontSize: "12px" }}>Senhas diferentes, por favor realize a correção.</p>}
+                {lengthErrorPasswords && <p style={{ color: "red", fontSize: "12px" }}>Senha deve conter no mínimo 8 caracteres.</p>}
+                {structurePasswords && <p style={{ color: "red", fontSize: "12px" }}>Senhas deve conter pelo menos 1 letra maiúscula, 1 número e 1 caractere especial.</p>}
             </div>
-            {differentPasswords && <p style={{ color: "red", fontSize: "8px" }}>Senhas diferentes, por favor realize a correção.</p>}
-            {lengthErrorPasswords && <p style={{ color: "red", fontSize: "8px" }}>Senha deve conter no mínimo 8 caracteres.</p>}
-            {structurePasswords && <p style={{ color: "red", fontSize: "8px" }}>Senhas deve conter pelo menos 1 letra maiúscula, 1 número e 1 caractere especial.</p>}
 
             <div className="button-submit">
-                <button type="submit" disabled={submitState}>Enviar Formulário</button>
+                <button type="submit" className={styles.submitButton} disabled={submitState}>Enviar Formulário</button>
                 {submitMessage && <p style={{color:'green',fontSize:'8px'}}>Formulário Enviado!</p>}
             </div>
         </form>
