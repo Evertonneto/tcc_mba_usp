@@ -57,6 +57,8 @@ function SortButton({
     );
 }
 
+const itemsPerPage = 5
+
 
 
 
@@ -65,6 +67,10 @@ export function Tabela() {
     const [searchByStatus, setSearchByStatus] = useState<"todos" | "ativos" | "inativos">("todos")
     const [sortKey, setSortKey] = useState<SortKeys>("nome");
     const [sortOrder, setSortOrder] = useState<SortOrder>("ascn");
+    const [pageActual, setPageActual] = useState<number>(1)
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+    
+    
 
      let sortedData = useCallback(
         () => sortData({ tableData: data, sortKey, reverse: sortOrder === "desc" }),
@@ -90,15 +96,15 @@ export function Tabela() {
         }
     })
 
-   
-
+   const listData = filteredData.slice((pageActual - 1) * itemsPerPage, pageActual * itemsPerPage);
+   console.log(listData)
 
     return (
         <div className={styles.tableContainer}>
             <div className={styles.filters}>
                 <div className="filterByName">
                     <label htmlFor="">Procurar:</label>
-                    <input type="text" value={searchByText} onChange={(e) => {
+                    <input type="text" className={styles.inputText} value={searchByText} onChange={(e) => {
                         setSearchByText(e?.target?.value)
                     }} />
                 </div>
@@ -115,7 +121,7 @@ export function Tabela() {
 
             </div>
 
-            <div className="tableDiv">
+            <div className={styles.tableDiv}>
                 <table className={styles.table}>
                     <thead className={styles.thead}>
                         <tr className={styles.tr}>
@@ -129,7 +135,7 @@ export function Tabela() {
                     </thead>
                     <tbody className={styles.tbody}>
 
-                        {filteredData.length > 0 ? (filteredData.map((value, key) => {
+                        {listData.length > 0 ? (listData.map((value, key) => {
                             return (
                                 <tr key={value.id} className={styles.tr}>
                                     <td className={styles.tr}>{value.id} </td>
@@ -146,6 +152,12 @@ export function Tabela() {
                             </tr>)}
 
                     </tbody>
+
+                    <tfoot className={styles.paginationComponents}>
+                            <button  disabled={pageActual === 1} onClick={() => setPageActual(prev => prev - 1)}>Anterior</button>
+                            <span style={{color:'white'}}> Page {pageActual} of {totalPages} </span>
+                            <button disabled={pageActual === totalPages} onClick={() => setPageActual(prev => prev + 1)}>Próximo</button>
+                    </tfoot>
 
                 </table>
             </div>

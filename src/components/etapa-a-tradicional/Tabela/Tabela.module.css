@@ -1,6 +1,6 @@
 body {
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-  background: linear-gradient(to right, #25c481, #25b7c4);
+  background: #212121;
 }
 
 .table {
@@ -24,7 +24,7 @@ body {
   text-align: left;
   font-weight: 500;
   font-size: 17px;
-  color: black;
+  color: white;
 }
 
 .sortButton {
@@ -63,4 +63,29 @@ body {
     background-color: azure;
     border-radius: 50px;
     width: 30%;
+    margin-top: 1rem;
+}
+
+.filters select{
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+.inputText{
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+.tableDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationComponents{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center ;
 }
