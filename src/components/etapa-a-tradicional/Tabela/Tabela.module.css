@@ -1,0 +1,66 @@
+body {
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tbody {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tr {
+  width: 100%;
+}
+
+.th,
+.td {
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 17px;
+  color: black;
+}
+
+.sortButton {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+
+  padding: 5px 10px;
+  margin: 0;
+  line-height: 1;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+
+  transition: transform 0.05s ease-out;
+}
+
+.sortReverse {
+  transform: rotate(180deg);
+}
+
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.filters{
+    display:  flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    background-color: azure;
+    border-radius: 50px;
+    width: 30%;
+}

@@ -5,7 +5,7 @@
     "cargo": "Tempore quibusdam sapiente omnis perferendis qui. Sed sint culpa occaecati atque alias.",
     "dataCadastro": "1963-02-16",
     "email": "isaac.mendanha@live.com",
-    "status": "Rem cumque nesciunt est molestiae. Omnis quos sit vitae."
+    "status": "Ativo"
   },
   {
     "nome": "João Miguel Vasques",
@@ -13,7 +13,7 @@
     "cargo": "Odio magni voluptatem maiores molestiae nulla enim delectus.",
     "dataCadastro": "1969-12-05",
     "email": "marialuiza.hernandes@hotmail.com",
-    "status": "Aspernatur quo distinctio quia. Accusantium autem beatae modi et."
+    "status": "Ativo"
   },
   {
     "nome": "Gustavo Aroeira",
@@ -21,7 +21,7 @@
     "cargo": "Est nisi aut doloribus eos.",
     "dataCadastro": "1973-11-29",
     "email": "rafaela.martins@hotmail.com",
-    "status": "Dolorum dolor dolorem. Quos qui sit assumenda tempore earum sed et. Quam dicta facilis quidem nam voluptatem ullam velit."
+    "status": "Ativo"
   },
   {
     "nome": "Maria Eduarda Pimenta",
@@ -29,7 +29,7 @@
     "cargo": "Sed maiores aut laborum dignissimos. Excepturi molestiae cum eius consectetur placeat et.",
     "dataCadastro": "1967-07-23",
     "email": "meire.dabarra@hotmail.com",
-    "status": "Quod odit tenetur."
+    "status": "Ativo"
   },
   {
     "nome": "Camila Louzada",
@@ -37,7 +37,7 @@
     "cargo": "Quod qui aliquid. Modi aut neque. Unde ut rerum illo.",
     "dataCadastro": "1998-06-21",
     "email": "isaac.lopes@gmail.com",
-    "status": "Voluptatum voluptates accusamus."
+    "status": "Ativo"
   },
   {
     "nome": "Sr. Lorenzo Ribeiro",
@@ -45,7 +45,7 @@
     "cargo": "Suscipit quaerat vel minima corporis quis at. Ipsum quae sapiente cum ducimus.",
     "dataCadastro": "1977-07-08",
     "email": "joaovitor.souza@gmail.com",
-    "status": "Magni nam repellendus corporis corporis error. Expedita unde minima autem et."
+    "status": "Ativo"
   },
   {
     "nome": "Sr. Stella Quaresma",
@@ -53,7 +53,7 @@
     "cargo": "Hic nam est nihil totam quidem autem. Suscipit minima et illo nemo eum.",
     "dataCadastro": "1975-06-11",
     "email": "hugo.paes@bol.com.br",
-    "status": "Suscipit suscipit architecto incidunt cupiditate repellat."
+    "status": "Inativo"
   },
   {
     "nome": "Sr. Benjamin Banheira",
@@ -61,7 +61,7 @@
     "cargo": "Ut quidem consequatur. Et doloribus voluptatibus ut id.",
     "dataCadastro": "1968-12-31",
     "email": "yago.freitas@hotmail.com",
-    "status": "Cum voluptas deserunt ut. Excepturi ut voluptas dolorum."
+    "status": "Inativo"
   },
   {
     "nome": "Adriana Rebouças",
@@ -69,7 +69,7 @@
     "cargo": "Minus cupiditate laudantium.",
     "dataCadastro": "1991-06-12",
     "email": "sara.ramalho@live.com",
-    "status": "Occaecati voluptas ut. Quibusdam praesentium omnis ab exercitationem nemo."
+    "status": "Inativo"
   },
   {
     "nome": "Srta. Mariana Godinho",
@@ -77,7 +77,7 @@
     "cargo": "Sed cupiditate consequuntur in et autem. Repellat voluptatem et et corrupti velit. Esse voluptas nostrum temporibus illo eveniet voluptas.",
     "dataCadastro": "1967-04-01",
     "email": "mercia.dabarra@bol.com.br",
-    "status": "Enim corporis commodi aspernatur sed cupiditate. Cupiditate id nostrum facilis. Est suscipit eaque molestiae quasi fugiat suscipit."
+    "status": "Inativo"
   },
   {
     "nome": "Maria Júlia de Sá Neto",
@@ -85,7 +85,7 @@
     "cargo": "Qui quam quibusdam vero consequuntur culpa perferendis. Quam qui ratione alias quae vel.",
     "dataCadastro": "1970-08-25",
     "email": "isaac.damadureira@gmail.com",
-    "status": "Ipsam sed accusantium exercitationem."
+    "status": "Inativo"
   },
   {
     "nome": "Hugo Martim",
@@ -93,7 +93,7 @@
     "cargo": "Rerum ab quis reprehenderit culpa.",
     "dataCadastro": "1978-07-31",
     "email": "joaopedro.delins@bol.com.br",
-    "status": "Dolorem consectetur minima illum dolorem aut eaque. Est omnis quam ex officiis hic dolorum. Autem a voluptatem aliquam ea alias."
+    "status": "Inativo"
   },
   {
     "nome": "Arthur Gabriel Sá",
@@ -101,7 +101,7 @@
     "cargo": "Possimus ab tempore laboriosam ut. Nemo perspiciatis iste impedit et.",
     "dataCadastro": "1980-01-06",
     "email": "emilly.aroeira@gmail.com",
-    "status": "Id voluptatem eius numquam est quia qui facere."
+    "status": "Inativo"
   },
   {
     "nome": "Ricardo Barreira",
@@ -109,7 +109,7 @@
     "cargo": "Quo reprehenderit deserunt nobis saepe voluptatem consectetur.",
     "dataCadastro": "1991-04-05",
     "email": "alessandra.soeira@yahoo.com",
-    "status": "Voluptatum exercitationem sed minus odio qui ut. Ut id exercitationem occaecati voluptatem deserunt."
+    "status": "Inativo"
   },
   {
     "nome": "Luiza Pereira",
@@ -117,7 +117,7 @@
     "cargo": "Pariatur suscipit quidem. Est quae voluptas nesciunt minima. Pariatur quidem voluptatibus deserunt non.",
     "dataCadastro": "1971-09-16",
     "email": "deneval.sa@yahoo.com",
-    "status": "Ut maiores magni sapiente consequuntur nam aut."
+    "status": "Inativo"
   },
   {
     "nome": "Pietra Lopes Jr.",
@@ -125,7 +125,7 @@
     "cargo": "Eos odit voluptas officia sit nisi. Non autem dolores.",
     "dataCadastro": "1989-09-01",
     "email": "anasophia.godinho@yahoo.com",
-    "status": "Doloribus aliquam nostrum. Quia sint id id illo consequuntur culpa. Non accusamus similique culpa et incidunt corporis."
+    "status": "Inativo"
   },
   {
     "nome": "Liz Ribeira",
@@ -133,7 +133,7 @@
     "cargo": "In aliquam praesentium. Ipsum molestias et officiis sed excepturi debitis saepe.",
     "dataCadastro": "1992-03-09",
     "email": "mariah.antunes@yahoo.com",
-    "status": "Sapiente repellat animi sint laborum. Aut ea incidunt."
+    "status": "Inativo"
   },
   {
     "nome": "Laís Soeira",
@@ -141,7 +141,7 @@
     "cargo": "Rerum eligendi fugiat.",
     "dataCadastro": "1983-04-21",
     "email": "gustavo.correa@yahoo.com",
-    "status": "Similique est expedita quisquam odio dolorem. Voluptas reiciendis est quia quia. Sunt aspernatur odio."
+    "status": "Inativo"
   },
   {
     "nome": "Dra. Ricardo Roseira",
@@ -149,7 +149,7 @@
     "cargo": "Et velit dolorem dolorum reiciendis quam.",
     "dataCadastro": "2001-12-16",
     "email": "daniel.danobrega@gmail.com",
-    "status": "Voluptatem fugiat delectus illo enim quia autem."
+    "status": "Inativo"
   },
   {
     "nome": "Benjamin Carneiro",
@@ -157,7 +157,7 @@
     "cargo": "Iusto et tempora non harum et aut.",
     "dataCadastro": "1987-03-18",
     "email": "dalila.nunes@bol.com.br",
-    "status": "Excepturi nihil ut enim necessitatibus vel tenetur. Libero ipsum dicta assumenda quo non. Est ut tempora quas accusamus nihil veritatis."
+    "status": "Inativo"
   },
   {
     "nome": "Allana Oliveira",
@@ -165,7 +165,7 @@
     "cargo": "Voluptatem enim omnis eum eum. Ut repellat accusamus rerum hic reprehenderit.",
     "dataCadastro": "1976-01-31",
     "email": "antonio.carreira@bol.com.br",
-    "status": "Quos et vel reiciendis cupiditate autem."
+    "status": "Inativo"
   },
   {
     "nome": "Carolina Limeira Jr.",
@@ -173,7 +173,7 @@
     "cargo": "Aut nobis consequatur illum necessitatibus voluptatem aut possimus.",
     "dataCadastro": "2007-09-04",
     "email": "alicia.gentil@live.com",
-    "status": "Ducimus voluptas pariatur. Illum in voluptas facilis omnis quia dolore accusamus."
+    "status": "Inativo"
   },
   {
     "nome": "Maria Eduarda Batista",
@@ -181,7 +181,7 @@
     "cargo": "Esse quaerat adipisci voluptatibus quia magni. Alias velit aperiam a.",
     "dataCadastro": "1996-05-30",
     "email": "joaopedro.teles@bol.com.br",
-    "status": "Perferendis quas placeat facilis aut ut. Corporis molestiae qui est eius."
+    "status": "Inativo"
   },
   {
     "nome": "Gabriel Geraldes Filho",
@@ -189,7 +189,7 @@
     "cargo": "Nulla excepturi maiores ea perspiciatis consectetur et. Ipsam quidem qui accusamus nostrum odio.",
     "dataCadastro": "1981-04-21",
     "email": "carloseduardo.velasques@gmail.com",
-    "status": "Eos nam aut et ut pariatur."
+    "status": "Ativo"
   },
   {
     "nome": "Sarah Domingues",
@@ -197,7 +197,7 @@
     "cargo": "Est omnis quia molestias doloremque quos culpa iste.",
     "dataCadastro": "1994-07-01",
     "email": "mariaalice.correa@yahoo.com",
-    "status": "Quia autem sit commodi corporis dolorum consequuntur commodi. Id impedit fuga magnam consequatur nobis."
+    "status": "Ativo"
   },
   {
     "nome": "Theo Filgueira Filho",
@@ -205,7 +205,7 @@
     "cargo": "Est tempora occaecati non sunt facere. Laboriosam reprehenderit eveniet quia cum doloremque inventore qui.",
     "dataCadastro": "1970-01-17",
     "email": "tertuliano.albuquerque@gmail.com",
-    "status": "Itaque debitis nam optio accusamus ea magnam molestiae. Et vero aspernatur. Aut error sapiente soluta rerum sit."
+    "status": "Inativo"
   },
   {
     "nome": "Arthur Henrique Pereira",
@@ -213,7 +213,7 @@
     "cargo": "Vel vel vitae maiores voluptatum aliquam corporis. Quis alias sint voluptates in dicta.",
     "dataCadastro": "1984-01-27",
     "email": "aline.damaia@bol.com.br",
-    "status": "Sapiente doloribus ratione minima perspiciatis dicta. Et labore blanditiis."
+    "status": "Ativo"
   },
   {
     "nome": "Isis Amoreira",
@@ -221,7 +221,7 @@
     "cargo": "Quisquam ut quod quisquam et. Corrupti blanditiis aut id dolore ut ipsa placeat.",
     "dataCadastro": "1981-12-12",
     "email": "rodrigo.esteves@live.com",
-    "status": "Corporis facilis doloribus."
+    "status": "Ativo"
   },
   {
     "nome": "Maria Fernanda Ordonhes",
@@ -229,7 +229,7 @@
     "cargo": "Sit quia dolor dolorum qui sed fugiat asperiores. Eos ea officiis et ea id in nihil.",
     "dataCadastro": "1978-03-22",
     "email": "ofelia.bentes@hotmail.com",
-    "status": "Autem et minus."
+    "status": "Ativo"
   },
   {
     "nome": "Bento Aguiar",
@@ -237,6 +237,6 @@
     "cargo": "Autem veniam quis dolores unde tempore minima veniam. Suscipit quia laudantium voluptas.",
     "dataCadastro": "1996-08-13",
     "email": "enzothiago.tavares@gmail.com",
-    "status": "Rerum sint aut temporibus non reiciendis saepe. Dolorem vel aspernatur aperiam blanditiis consequuntur quos voluptatum."
+    "status": "Inativo"
   }
 ]
