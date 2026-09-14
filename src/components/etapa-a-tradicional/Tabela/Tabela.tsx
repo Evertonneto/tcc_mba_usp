@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useEffect, MouseEventHandler, useCallback } from "react";
+import { useState, MouseEventHandler, useCallback } from "react";
 import data from './data.json'
 import styles from './Tabela.module.css'
-import { reverse } from "dns";
 
 type Data = typeof data;
 
@@ -72,7 +71,7 @@ export function Tabela() {
     
     
 
-     let sortedData = useCallback(
+     const sortedData = useCallback(
         () => sortData({ tableData: data, sortKey, reverse: sortOrder === "desc" }),
         [data, sortKey, sortOrder]
     );
@@ -83,7 +82,7 @@ export function Tabela() {
         setSortKey(key);
     }
 
-    let filteredData = sortedData().filter(item  =>
+    const filteredData = sortedData().filter(item  =>
         item.nome.toLowerCase().includes(searchByText.toLowerCase()) ||
         item.email.toLowerCase().includes(searchByText.toLowerCase())
     ).filter(item => {
@@ -135,7 +134,7 @@ export function Tabela() {
                     </thead>
                     <tbody className={styles.tbody}>
 
-                        {listData.length > 0 ? (listData.map((value, key) => {
+                        {listData.length > 0 ? (listData.map((value) => {
                             return (
                                 <tr key={value.id} className={styles.tr}>
                                     <td className={styles.tr}>{value.id} </td>
