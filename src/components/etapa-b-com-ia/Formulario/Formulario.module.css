@@ -1,0 +1,246 @@
+.section {
+	--ink: #17242a;
+	--muted: #5d6b70;
+	--line: #d4e0df;
+	--surface: #ffffff;
+	--surface-soft: #f3f8f7;
+	--accent: #087f78;
+	--accent-dark: #05635e;
+	--danger: #b42318;
+	--success: #13715f;
+	width: min(100% - 2rem, 52rem);
+	margin: 2rem auto;
+	padding: clamp(1.25rem, 4vw, 3rem);
+	border: 1px solid rgba(8, 127, 120, 0.14);
+	border-radius: 1.25rem;
+	background:
+		radial-gradient(circle at 100% 0%, rgba(8, 127, 120, 0.11), transparent 30%),
+		var(--surface);
+	box-shadow: 0 1.5rem 4rem rgba(23, 36, 42, 0.1);
+	color: var(--ink);
+}
+
+.intro {
+	max-width: 38rem;
+	margin-bottom: 2rem;
+}
+
+.eyebrow {
+	display: inline-block;
+	margin-bottom: 0.75rem;
+	color: var(--accent-dark);
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.title {
+	margin: 0;
+	font-size: clamp(1.7rem, 4vw, 2.35rem);
+	line-height: 1.1;
+	letter-spacing: 0;
+}
+
+.description {
+	margin: 0.75rem 0 0;
+	color: var(--muted);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.fields {
+	display: grid;
+	gap: 1.2rem;
+}
+
+.field,
+.fieldset {
+	min-width: 0;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+}
+
+.label,
+.fieldset legend {
+	color: var(--ink);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.input {
+	width: 100%;
+	min-height: 3rem;
+	border: 1px solid var(--line);
+	border-radius: 0.65rem;
+	padding: 0.75rem 0.9rem;
+	background: var(--surface);
+	color: var(--ink);
+	font: inherit;
+	transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.input::placeholder {
+	color: #87969a;
+}
+
+.input:hover {
+	border-color: #9db7b5;
+}
+
+.input:focus-visible,
+.radio:focus-visible,
+.submitButton:focus-visible {
+	outline: 3px solid rgba(8, 127, 120, 0.28);
+	outline-offset: 2px;
+}
+
+.input:focus {
+	border-color: var(--accent);
+	box-shadow: 0 0 0 3px rgba(8, 127, 120, 0.12);
+}
+
+.input[aria-invalid="true"] {
+	border-color: var(--danger);
+}
+
+.hint {
+	color: var(--muted);
+	font-size: 0.78rem;
+	line-height: 1.45;
+}
+
+.error,
+.success {
+	margin: 0;
+	font-size: 0.82rem;
+	line-height: 1.45;
+}
+
+.error {
+	color: var(--danger);
+}
+
+.success {
+	color: var(--success);
+	font-weight: 700;
+}
+
+.fieldset {
+	border: 0;
+	padding: 0;
+}
+
+.fieldset legend {
+	margin-bottom: 0.65rem;
+}
+
+.radioGroup {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+.radioCard {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	min-height: 3rem;
+	border: 1px solid var(--line);
+	border-radius: 0.65rem;
+	padding: 0.75rem 0.9rem;
+	background: var(--surface-soft);
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 600;
+	transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.radioCard:has(.radio:checked) {
+	border-color: var(--accent);
+	background: #eaf7f5;
+}
+
+.radio {
+	width: 1.05rem;
+	height: 1.05rem;
+	accent-color: var(--accent);
+}
+
+.conditionalFields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.2rem;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding-top: 0.25rem;
+}
+
+.submitButton {
+	min-height: 3rem;
+	border: 0;
+	border-radius: 0.65rem;
+	padding: 0.8rem 1.5rem;
+	background: var(--accent);
+	color: #ffffff;
+	font: inherit;
+	font-weight: 800;
+	cursor: pointer;
+	transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.submitButton:hover:not(:disabled) {
+	background: var(--accent-dark);
+	box-shadow: 0 0.5rem 1rem rgba(8, 127, 120, 0.2);
+	transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+	background: #afc1bf;
+	cursor: not-allowed;
+}
+
+@media (max-width: 40rem) {
+	.section {
+		width: min(100% - 1rem, 52rem);
+		margin: 0.5rem auto;
+		border-radius: 0.9rem;
+		padding: 1.25rem;
+	}
+
+	.radioGroup,
+	.conditionalFields {
+		grid-template-columns: 1fr;
+	}
+
+	.actions {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.submitButton {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.input,
+	.radioCard,
+	.submitButton {
+		transition: none;
+	}
+}
