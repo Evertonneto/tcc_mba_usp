@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navegacao from "@/components/etapa-a-tradicional/Navegacao/Navegacao";
+import NavegacaoIA from "@/components/etapa-b-com-ia/Navegacao/Navegacao";
 
 export const metadata: Metadata = {
   title: "TCC",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
+        <NavegacaoIA /> 
         {/* <Navegacao /> */}
         {children}
       </body>

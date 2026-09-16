@@ -14,7 +14,7 @@ export default function Home() {
         {/* <Formulario/> */}
         {/* <FormularioIA/> */}
         {/* <Tabela/> */}
-        <TabelaIA/>
+        {/* <TabelaIA/> */}
         {/* <Navegacao/> */}
       </main>
       <footer></footer>
